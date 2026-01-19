@@ -1,6 +1,8 @@
+import 'package:websocket_example/user.dart';
+
 abstract class UserState {
   late String msg;
-  late List<String> user = List.empty();
+  late List<User> user = List.empty();
 
   /// {@macro ticker_state}
   UserState();
@@ -15,7 +17,7 @@ class UsersLoading extends UserState {
 }
 
 class UsersLoaded extends UserState {
-  UsersLoaded(List<String> user) {
+  UsersLoaded(List<User> user) {
     this.user = user;
   }
 }
